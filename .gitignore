@@ -1,0 +1,10 @@
+# Editors / IDE
+.idea/
+.vscode/
+*.swp
+.DS_Store
+Thumbs.db
+
+# OS / Cloud sync turds
+~$*
+*.lnk

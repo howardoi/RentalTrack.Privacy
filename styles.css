@@ -1,0 +1,209 @@
+/* =================================================================
+   RentTrack Privacy site — single page, dark-only.
+   Visual tokens borrowed from design_handoff_renttrack/colors_and_type.css
+   but transcribed to hex so we don't depend on oklch browser support.
+   ================================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+
+:root {
+  --brand-600: #2BA873;        /* primary brand green */
+  --brand-700: #4FD09A;
+  --brand-on:  #FFFFFF;
+
+  --bg-1: #0E1410;             /* page */
+  --bg-2: #161E18;             /* card / header / footer */
+  --bg-3: #1E2723;             /* sunken */
+
+  --fg-1: #F1EFE6;             /* primary text */
+  --fg-2: #B5BBB4;             /* secondary */
+  --fg-3: #7B8079;             /* tertiary */
+
+  --line-1: #2A332D;
+  --line-2: #3B453E;
+
+  --r-card: 14px;
+  --r-pill: 999px;
+
+  --shadow-md: 0 4px 14px -4px rgba(0, 0, 0, 0.50);
+
+  --font-sans: 'Plus Jakarta Sans', ui-sans-serif, system-ui, -apple-system, sans-serif;
+}
+
+/* Reset */
+*, *::before, *::after { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+img, svg { display: block; max-width: 100%; }
+a { color: var(--brand-700); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+body {
+  background: var(--bg-1);
+  color: var(--fg-1);
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+.wrap {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ── Header ──────────────────────────────────────────────────── */
+.site-header {
+  background: var(--bg-2);
+  border-bottom: 1px solid var(--line-1);
+  position: sticky; top: 0; z-index: 10;
+  backdrop-filter: blur(8px);
+}
+.header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--fg-1);
+  font-weight: 700;
+  font-size: 17px;
+  letter-spacing: -0.01em;
+}
+.brand:hover { text-decoration: none; }
+.brand-glyph { display: inline-flex; }
+.header-nav a {
+  color: var(--fg-2);
+  font-size: 14px;
+  padding: 6px 12px;
+  border-radius: var(--r-pill);
+}
+.header-nav a:hover {
+  color: var(--fg-1);
+  background: var(--bg-3);
+  text-decoration: none;
+}
+
+/* ── Article ─────────────────────────────────────────────────── */
+main.wrap { padding-top: 48px; padding-bottom: 64px; }
+
+.prose .eyebrow {
+  display: inline-block;
+  background: var(--bg-3);
+  color: var(--fg-2);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: var(--r-pill);
+  margin: 0 0 20px 0;
+}
+.prose h1 {
+  font-size: 36px;
+  line-height: 1.15;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin: 0 0 16px 0;
+  color: var(--fg-1);
+}
+.prose .lede {
+  font-size: 17px;
+  line-height: 1.55;
+  color: var(--fg-2);
+  margin: 0 0 24px 0;
+}
+.prose .meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 24px;
+  color: var(--fg-3);
+  font-size: 13px;
+  margin: 0 0 24px 0;
+}
+.prose .meta strong { color: var(--fg-2); font-weight: 600; margin-right: 4px; }
+
+.prose hr {
+  border: 0;
+  border-top: 1px solid var(--line-1);
+  margin: 32px 0;
+}
+
+.prose h2 {
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--fg-1);
+  margin: 40px 0 12px 0;
+  scroll-margin-top: 80px;
+}
+.prose h3 {
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--fg-1);
+  margin: 24px 0 8px 0;
+}
+.prose p { margin: 12px 0; color: var(--fg-1); }
+.prose strong { color: var(--fg-1); font-weight: 600; }
+.prose em { color: var(--fg-2); }
+
+.prose ul, .prose ol {
+  margin: 12px 0 16px 0;
+  padding-left: 22px;
+}
+.prose li {
+  margin: 6px 0;
+  color: var(--fg-1);
+}
+.prose li::marker { color: var(--brand-600); }
+
+.prose code {
+  font-family: ui-monospace, 'JetBrains Mono', SFMono-Regular, Menlo, monospace;
+  font-size: 0.9em;
+  background: var(--bg-3);
+  color: var(--fg-1);
+  padding: 1px 6px;
+  border-radius: 6px;
+  border: 1px solid var(--line-1);
+}
+
+/* ── Footer ──────────────────────────────────────────────────── */
+.site-footer {
+  background: var(--bg-2);
+  border-top: 1px solid var(--line-1);
+  margin-top: 64px;
+}
+.footer-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 24px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 24px;
+  color: var(--fg-3);
+  font-size: 13px;
+}
+.footer-row p { margin: 0; }
+.footer-row .muted { color: var(--fg-3); }
+
+/* ── Mobile tweaks ───────────────────────────────────────────── */
+@media (max-width: 600px) {
+  .header-row { height: 56px; }
+  .brand-name { font-size: 16px; }
+  main.wrap { padding-top: 32px; padding-bottom: 48px; }
+  .prose h1 { font-size: 28px; }
+  .prose h2 { font-size: 19px; margin-top: 32px; }
+  .prose .lede { font-size: 16px; }
+}
+
+/* ── Print (in case anyone prints it) ────────────────────────── */
+@media print {
+  body { background: #fff; color: #000; }
+  .site-header, .site-footer { display: none; }
+  .prose h1, .prose h2, .prose h3, .prose p, .prose li, .prose strong { color: #000; }
+  a { color: #000; text-decoration: underline; }
+}
