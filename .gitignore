@@ -8,3 +8,10 @@ Thumbs.db
 # OS / Cloud sync turds
 ~$*
 *.lnk
+
+# wrangler files
+.wrangler
+.dev.vars*
+!.dev.vars.example
+.env*
+!.env.example
